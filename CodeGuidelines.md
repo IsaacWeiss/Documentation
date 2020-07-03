@@ -296,6 +296,16 @@ ClassName::ClassName(int arg)
  char* blockOfMemory = reinterpret_cast<char*>(malloc(data.size()));
 ```
 
+Use safer type conversion when possible:
+
+```C++
+// Wrong
+Chord* chord = static_cast<Chord*>(e);
+
+// Correct
+Chord* chord = toChord(e);
+```
+
 ### Braces
 
 * Use attached braces: The opening brace goes on the same line as the start of the statement. If the closing brace is followed by another keyword, it goes into the same line as well:
